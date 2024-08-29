@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.carousel_background {
+  width: auto;
+  height: 600px;
+  background-image: url(https://s3-alpha-sig.figma.com/img/eb4f/aad2/4394e91108e011b0d07581596959713b?Expires=1725840000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=oOv1Sv0nZsc-7aG08OA0bM-c5I4UQcBj76wy1pKi0Bn21U-UsfiuD35-r5tZrTah4Ew8JEif8pV3i-KtHOZ~U-ag587jL4qM3y4YdvO8UP79kNEUuCRBTzzYDXUrmdXciuWsb9eTaGK0GJdHYeVaJWCl30rPRSUBvfXryRc~SSsND9Rx0DMciKWix0uBEAch94qBJ~-Y8RWL4O9UR1m~-tOCN-t4s4KHTc93XQx74nWmDCsOBsw6AqET2SBfeK~VMQmI~Q9~uzxHfTslPeK8iXLhnrBsZXX~13kXV-F9stsonWepo7UBThJCg6UJJifReHGW8PM5khO6WQ-y3siAww__);
+  background-position: center;
+  background-size: cover;
+}
