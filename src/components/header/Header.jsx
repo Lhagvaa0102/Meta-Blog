@@ -3,7 +3,7 @@ import { SearchIcon } from "../icons/SearchIcon";
 
 export const Header = () => {
   return (
-    <div className="container flex sticky z-50 p-9 justify-between ">
+    <div className="container flex  z-50 p-9 justify-between ">
       <div>
         <HeaderIcon />
       </div>

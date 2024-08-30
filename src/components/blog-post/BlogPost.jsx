@@ -15,6 +15,11 @@ export const BlogPost = () => {
           date={"August 20, 2022"}
         />
       </div>
+      <div className="flex justify-center">
+        <button className="border mt-8 mb-8 rounded-s pt-3 pb-3 pl-5 pr-5 text-wrap ">
+          Load More
+        </button>
+      </div>
     </div>
   );
 };

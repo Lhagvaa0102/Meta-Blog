@@ -5,7 +5,7 @@ export const Carousel = () => {
   return (
     <div>
       <div className="h-[600px] carousel_background border mt-[100px] flex justify-start rounded-xl items-end ">
-        <div className="w-[598px] h-[252px] border rounded-xl ml-2 p-10 mb-2 bg-white gap-5  ">
+        <div className="w-1/2 h-[252px] border rounded-xl ml-2 p-10 mb-2 bg-white gap-5  ">
           <span className="bg-[#4B6BFB] p-1 rounded-md text-[#FFFF]">
             Technology
           </span>
