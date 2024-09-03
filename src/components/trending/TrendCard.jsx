@@ -1,4 +1,4 @@
-export const TrendCard = ({ text, badge, imgurl }) => {
+export const TrendCard = ({ text, badge, imgurl, article }) => {
   return (
     <div
       className="w-[293px] h-[320px] p-10 flex flex-col items-start gap-4 justify-end border rounded-xl bg-cover bg-center bg-[url('https://img.freepik.com/free-vector/particle-face-tech-background_23-2148309417.jpg')] "
