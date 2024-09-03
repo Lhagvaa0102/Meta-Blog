@@ -10,6 +10,7 @@ export const BlogPost = () => {
       .then((response) => response.json())
       .then((data) => setArticles(data));
   };
+
   useEffect(() => {
     fetchData();
   }, [page]);
@@ -28,7 +29,7 @@ export const BlogPost = () => {
       <div className="flex justify-center">
         <button
           onClick={handleMorePageClick}
-          className="border mt-8 mb-8 rounded-s pt-3 pb-3 pl-5 pr-5 text-wrap "
+          className="border mt-8 mb-8 rounded pt-3 pb-3 pl-5 pr-5 text-wrap "
         >
           Load More
         </button>
