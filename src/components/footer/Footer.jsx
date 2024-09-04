@@ -31,9 +31,9 @@ export const Footer = () => {
             </div>
           </div>
           <div className="flex gap-2 flex-col">
-            <p>Home</p>
-            <p>Blog</p>
-            <p>Contact</p>
+            <a href="./">Home</a>
+            <a href="./blog-list">Blog</a>
+            <a href="./contact-us">Contact</a>
           </div>
           <div className="flex gap-5 ">
             <FacebookIcon />

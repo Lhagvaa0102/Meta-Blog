@@ -10,7 +10,6 @@ export const BlogPost = () => {
       .then((response) => response.json())
       .then((data) => setArticles(data));
   };
-
   useEffect(() => {
     fetchData();
   }, [page]);

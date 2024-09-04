@@ -10,7 +10,9 @@ export const BlogPostHeader = () => {
         <button className="hover:text-[#D4A373;]">Branding</button>
       </div>
       <div>
-        <button className="hover:text-[#D4A373;]">View All</button>
+        <a className="hover:text-[#D4A373;]" href="./blog-list">
+          View All
+        </a>
       </div>
     </div>
   );

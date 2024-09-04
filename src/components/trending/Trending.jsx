@@ -4,7 +4,7 @@ export const Trending = () => {
   const [articles, setArticles] = useState([]);
 
   const fetchData = () => {
-    fetch("https://dev.to/api/articles?per_page=4")
+    fetch("https://dev.to/api/articles?per_page=4&top=2")
       .then((response) => response.json())
       .then((data) => setArticles(data));
   };
