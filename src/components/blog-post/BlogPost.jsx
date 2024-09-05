@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { BlogPostCard } from "./BlogPostCard";
 import { BlogPostHeader } from "./BlogPostHeader";
 import { useState, useEffect } from "react";
@@ -22,7 +23,11 @@ export const BlogPost = () => {
       <BlogPostHeader />
       <div className="mt-8 flex gap-y-5 flex-wrap justify-between ">
         {articles.map((article) => {
-          return <BlogPostCard article={article} />;
+          return (
+            <Link href={`blog-list/${article.id}`}>
+              <BlogPostCard article={article} />
+            </Link>
+          );
         })}
       </div>
       <div className="flex justify-center">

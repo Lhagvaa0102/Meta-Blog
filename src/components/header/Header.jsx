@@ -8,9 +8,9 @@ export const Header = () => {
         <HeaderIcon />
       </div>
       <div className="flex text-[#3B3C4A] items-center gap-10 ">
-        <a href="./">Home</a>
-        <a href="./blog-list">Blog</a>
-        <a href="./contact-us">Contact</a>
+        <a href="/">Home</a>
+        <a href="/blog-list">Blog</a>
+        <a href="/contact-us">Contact</a>
       </div>
       <div className="border rounded-md flex items-center h-5  gap-3 p-4 bg-gray-200">
         <input

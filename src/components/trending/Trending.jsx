@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { TrendCard } from "./TrendCard";
 import { useState, useEffect } from "react";
 export const Trending = () => {
@@ -8,7 +9,6 @@ export const Trending = () => {
       .then((response) => response.json())
       .then((data) => setArticles(data));
   };
-  console.log(articles);
   useEffect(() => {
     fetchData();
   }, []);
@@ -18,7 +18,11 @@ export const Trending = () => {
       <h1 className="font-bold text-2xl">Trending</h1>
       <div className="flex gap-5">
         {articles.map((article) => {
-          return <TrendCard article={article} />;
+          return (
+            <Link href={`blog-list/${article.id}`}>
+              <TrendCard article={article} />;
+            </Link>
+          );
         })}
       </div>
     </div>

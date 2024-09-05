@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Footer } from "../footer/Footer";
 import { Header } from "../header/Header";
 import { BlogListCard } from "./BlogListCard";
@@ -25,7 +26,11 @@ export const BlogListSection = () => {
         </h1>
         <div className="flex flex-wrap gap-5">
           {articles.map((article) => {
-            return <BlogListCard article={article} />;
+            return (
+              <Link href={`blog-list/${article.id}`}>
+                <BlogListCard article={article} />
+              </Link>
+            );
           })}
         </div>
         <div className="flex justify-center">
