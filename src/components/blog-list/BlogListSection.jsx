@@ -28,7 +28,10 @@ export const BlogListSection = () => {
           {articles.map((article) => {
             return (
               <Link href={`blog-list/${article.id}`}>
-                <BlogListCard article={article} />
+                <BlogListCard
+                  article={article}
+                  created_at={article.created_at}
+                />
               </Link>
             );
           })}

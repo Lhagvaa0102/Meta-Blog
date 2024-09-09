@@ -56,7 +56,7 @@ const ContactUsPage = () => {
               type="text"
             />
             <input
-              className="w-[474px] h-[134px] pl-[20px] pt-[14px] text-start "
+              className="w-[474px] h-[134px] align-top pl-[20px] pt-[14px] text-start "
               placeholder="Write a message"
               type="text"
             />

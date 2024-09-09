@@ -1,34 +1,5 @@
-export const BlogListCard = ({ article }) => {
-  const publishedDate = new Date(article.published_at);
-  const generatMonth = (month) => {
-    switch (month) {
-      case 1:
-        return "January";
-      case 2:
-        return "February";
-      case 3:
-        return "March";
-      case 4:
-        return "April";
-      case 5:
-        return "May";
-      case 6:
-        return "June";
-      case 7:
-        return "July";
-      case 8:
-        return "August";
-      case 9:
-        return "September";
-      case 10:
-        return "October";
-      case 11:
-        return "November";
-      case 12:
-        return "December";
-    }
-  };
-  console.log(article);
+import { format } from "date-fns";
+export const BlogListCard = ({ article, created_at }) => {
   return (
     <div className="w-[392px] h-[475px] border-[#E8E8EA] rounded-xl border p-4 flex flex-col justify-between">
       <div className="flex flex-col gap-4">
@@ -42,9 +13,12 @@ export const BlogListCard = ({ article }) => {
             borderRadius: "6px",
           }}
         ></div>
-        <div className="w-[100px] h-[30px] bg-[#4B6BFB0D] flex justify-center items-center rounded-md text-[#4B6BFB]">
-          {article.tag_list[0]}
+        <div>
+          <span className=" bg-[#4B6BFB0D] pl-2 pr-2 pt-1 pb-1 rounded-md text-[#4B6BFB]">
+            {article.tag_list[0]}
+          </span>
         </div>
+
         <div className="overflow-hidden h-[100px]">
           <p className="text-2xl line-clamp-3 font-semibold  ">
             {article.description}
@@ -61,8 +35,7 @@ export const BlogListCard = ({ article }) => {
         </div>
 
         <p className=" text-[#97989F]">
-          {generatMonth(publishedDate.getMonth())} {publishedDate.getDay()},
-          {publishedDate.getFullYear()}
+          {format(new Date(created_at), "MMMM d, yyyy")}
         </p>
       </div>
     </div>

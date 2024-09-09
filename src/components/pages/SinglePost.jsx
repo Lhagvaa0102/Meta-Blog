@@ -2,8 +2,9 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Header } from "../header/Header";
 import { Footer } from "../footer/Footer";
+import { format } from "date-fns";
 
-const SinglePostPage = () => {
+const SinglePostPage = ({ created_at }) => {
   const router = useRouter();
   const [article, setArticle] = useState({});
   const fetchData = () => {
@@ -27,6 +28,9 @@ const SinglePostPage = () => {
               src={article?.user?.profile_image}
             />
             <p className="text-[#97989F]">{article?.user?.name}</p>
+            <p className="text-[#97989F]">
+              {/* {format(new Date(article.created_at), "MMMM d, yyy")} */}
+            </p>
           </div>
 
           <div className="flex items-center flex-col text-[#3B3C4A] gap-8">
