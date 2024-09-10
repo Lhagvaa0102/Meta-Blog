@@ -5,7 +5,9 @@ export const BlogPostCard = ({ article, created_at }) => {
       <div className="flex flex-col gap-4">
         <div
           style={{
-            backgroundImage: `url(${article.cover_image})`,
+            backgroundImage: `url(${
+              article.cover_image || "image-not-found.png"
+            })`,
             width: "100%",
             height: "240px",
             backgroundSize: "cover",

@@ -1,11 +1,13 @@
 import { format } from "date-fns";
-export const BlogListCard = ({ article, created_at }) => {
+export const BlogListCard = ({ article }) => {
   return (
     <div className="w-[392px] h-[475px] border-[#E8E8EA] rounded-xl border p-4 flex flex-col justify-between">
       <div className="flex flex-col gap-4">
         <div
           style={{
-            backgroundImage: `url(${article.cover_image})`,
+            backgroundImage: `url(${
+              article.cover_image || "image-not-found.png"
+            })`,
             width: "100%",
             height: "240px",
             backgroundSize: "cover",
@@ -15,7 +17,7 @@ export const BlogListCard = ({ article, created_at }) => {
         ></div>
         <div>
           <span className=" bg-[#4B6BFB0D] pl-2 pr-2 pt-1 pb-1 rounded-md text-[#4B6BFB]">
-            {article.tag_list[0]}
+            {article.tag_list[0] || "tag not found"}
           </span>
         </div>
 
@@ -35,7 +37,7 @@ export const BlogListCard = ({ article, created_at }) => {
         </div>
 
         <p className=" text-[#97989F]">
-          {format(new Date(created_at), "MMMM d, yyyy")}
+          {format(new Date(article.created_at), "MMMM d, yyyy")}
         </p>
       </div>
     </div>

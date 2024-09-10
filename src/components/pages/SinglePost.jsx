@@ -2,11 +2,13 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Header } from "../header/Header";
 import { Footer } from "../footer/Footer";
-import { format } from "date-fns";
+import { generatMonth } from "../util/months";
 
-const SinglePostPage = ({ created_at }) => {
-  const router = useRouter();
+const SinglePostPage = ({}) => {
   const [article, setArticle] = useState({});
+  const publishedDate = new Date(article.published_at);
+  const router = useRouter();
+
   const fetchData = () => {
     fetch(`https://dev.to/api/articles/${router.query.id}`)
       .then((response) => response.json())
@@ -15,7 +17,7 @@ const SinglePostPage = ({ created_at }) => {
   useEffect(() => {
     fetchData();
   }, []);
-  console.log();
+
   return (
     <div className="flex flex-col items-center">
       <div className="container max-w-[1220px] flex flex-col items-center">
@@ -29,12 +31,16 @@ const SinglePostPage = ({ created_at }) => {
             />
             <p className="text-[#97989F]">{article?.user?.name}</p>
             <p className="text-[#97989F]">
-              {/* {format(new Date(article.created_at), "MMMM d, yyy")} */}
+              {generatMonth(publishedDate.getMonth())} {publishedDate.getDay()},
+              {publishedDate.getFullYear()}
             </p>
           </div>
 
           <div className="flex items-center flex-col text-[#3B3C4A] gap-8">
-            <img className="mt-8" src={article?.cover_image} />
+            <img
+              className="mt-8"
+              src={article?.cover_image || "/image-not-found.png"}
+            />
             <h1 className="text-2xl font-semibold">{article?.description}</h1>
             <div>
               <p>

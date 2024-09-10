@@ -25,7 +25,11 @@ export const BlogPost = () => {
         {articles.map((article) => {
           return (
             <Link href={`blog-list/${article.id}`}>
-              <BlogPostCard article={article} created_at={article.created_at} />
+              <BlogPostCard
+                article={article}
+                key={article.id}
+                created_at={article.created_at}
+              />
             </Link>
           );
         })}

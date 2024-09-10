@@ -20,7 +20,7 @@ export const Trending = () => {
         {articles.map((article) => {
           return (
             <Link href={`blog-list/${article.id}`}>
-              <TrendCard article={article} />
+              <TrendCard article={article} key={article?.id} />
             </Link>
           );
         })}

@@ -7,7 +7,7 @@ export const Carousel = () => {
   const [articles, setArticles] = useState([]);
   const [page, setPage] = useState(1);
   const fetchData = () => {
-    fetch(`https://dev.to/api/articles?per_page=1&page=${page}&top=5`)
+    fetch(`https://dev.to/api/articles?per_page=1&page=${page}&top=3`)
       .then((response) => response.json())
       .then((data) => setArticles(data));
   };
@@ -25,7 +25,7 @@ export const Carousel = () => {
       {articles.map((article) => {
         return (
           <Link href={`/blog-list/${article.id}`}>
-            <CarouselCard article={article} />
+            <CarouselCard article={article} key={article?.id} />
           </Link>
         );
       })}

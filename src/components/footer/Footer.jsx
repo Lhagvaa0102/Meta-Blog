@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   FacebookIcon,
   InstagramIcon,
@@ -31,9 +32,9 @@ export const Footer = () => {
             </div>
           </div>
           <div className="flex gap-2 flex-col">
-            <a href="./">Home</a>
-            <a href="./blog-list">Blog</a>
-            <a href="./contact-us">Contact</a>
+            <Link href="/">Home</Link>
+            <Link href="/blog-list">Blog</Link>
+            <Link href="/contact-us">Contact</Link>
           </div>
           <div className="flex gap-5 ">
             <FacebookIcon />
