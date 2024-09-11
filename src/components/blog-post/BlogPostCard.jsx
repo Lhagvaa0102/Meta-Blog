@@ -17,7 +17,7 @@ export const BlogPostCard = ({ article, created_at }) => {
         ></div>
         <div>
           <span className=" bg-[#4B6BFB0D] pl-2 pr-2 pt-1 pb-1 rounded-md text-[#4B6BFB]">
-            {article.tag_list[0] || "tag not found"}
+            {article.tags || "tag not found"}
           </span>
         </div>
 

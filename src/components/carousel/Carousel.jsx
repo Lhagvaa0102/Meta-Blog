@@ -5,7 +5,7 @@ import { CarouselCard } from "./CarouselCard";
 import Link from "next/link";
 export const Carousel = () => {
   const [articles, setArticles] = useState([]);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(9);
   const fetchData = () => {
     fetch(`https://dev.to/api/articles?per_page=1&page=${page}&top=3`)
       .then((response) => response.json())

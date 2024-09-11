@@ -8,22 +8,24 @@ const SinglePostPage = ({}) => {
   const [article, setArticle] = useState({});
   const publishedDate = new Date(article.published_at);
   const router = useRouter();
-
+  const id = router.query.id;
   const fetchData = () => {
-    fetch(`https://dev.to/api/articles/${router.query.id}`)
+    fetch(`https://dev.to/api/articles/${id}`)
       .then((response) => response.json())
       .then((data) => setArticle(data));
   };
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [id]);
 
   return (
     <div className="flex flex-col items-center">
       <div className="container max-w-[1220px] flex flex-col items-center">
         <Header />
         <div className="w-[800px] mt-28 ">
-          <h1 className="font-bold text-4xl ">{article?.title}</h1>
+          <h1 className="font-bold text-4xl ">
+            {article?.title || "Title not Found"}
+          </h1>
           <div className="flex items-center gap-3 mt-5">
             <img
               className="w-9 h-9 border rounded-full "
@@ -31,8 +33,8 @@ const SinglePostPage = ({}) => {
             />
             <p className="text-[#97989F]">{article?.user?.name}</p>
             <p className="text-[#97989F]">
-              {generatMonth(publishedDate.getMonth())} {publishedDate.getDay()},
-              {publishedDate.getFullYear()}
+              {generatMonth(publishedDate.getMonth())}{" "}
+              {publishedDate.getDay() + 1},{publishedDate.getFullYear()}
             </p>
           </div>
 

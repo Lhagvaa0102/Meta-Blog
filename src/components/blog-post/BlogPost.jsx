@@ -17,6 +17,7 @@ export const BlogPost = () => {
   const handleMorePageClick = () => {
     setPage(page + 3);
   };
+
   return (
     <div className="mt-[100px]">
       <h1 className="font-bold text-2xl">All Blog Post</h1>
