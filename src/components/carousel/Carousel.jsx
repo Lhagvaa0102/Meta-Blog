@@ -17,6 +17,7 @@ export const Carousel = () => {
   const handleMorePageClickLeft = () => {
     setPage(page - 1);
   };
+  // test
   useEffect(() => {
     fetchData();
   }, [page]);
