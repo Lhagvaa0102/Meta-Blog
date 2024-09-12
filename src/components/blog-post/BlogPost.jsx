@@ -6,14 +6,20 @@ import { useState, useEffect } from "react";
 export const BlogPost = () => {
   const [articles, setArticles] = useState([]);
   const [page, setPage] = useState(9);
+  const [tag, setTag] = useState("");
   const fetchData = () => {
-    fetch(` https://dev.to/api/articles?per_page=${page}`)
+    fetch(` https://dev.to/api/articles?per_page=${page}&tag=${tag}`)
       .then((response) => response.json())
       .then((data) => setArticles(data));
   };
   useEffect(() => {
     fetchData();
-  }, [page]);
+  }, [tag, page]);
+  articles.tag_list;
+
+  const handleChange = (newtag) => {
+    setTag(newtag);
+  };
   const handleMorePageClick = () => {
     setPage(page + 3);
   };
@@ -21,7 +27,7 @@ export const BlogPost = () => {
   return (
     <div className="mt-[100px]">
       <h1 className="font-bold text-2xl">All Blog Post</h1>
-      <BlogPostHeader />
+      <BlogPostHeader handleChange={handleChange} />
       <div className="mt-8 flex gap-y-5 flex-wrap justify-between ">
         {articles.map((article) => {
           return (

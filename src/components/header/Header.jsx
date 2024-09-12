@@ -29,7 +29,9 @@ export const Header = () => {
   return (
     <div className="container flex  p-9 justify-between ">
       <div>
-        <HeaderIcon />
+        <Link href="/">
+          <HeaderIcon />
+        </Link>
       </div>
       <div className="flex text-[#3B3C4A] items-center gap-10 ">
         <Link href="/">Home</Link>
