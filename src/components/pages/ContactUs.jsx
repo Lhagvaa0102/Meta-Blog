@@ -40,26 +40,31 @@ const ContactUsPage = () => {
             <h1>Leave a Message</h1>
             <div className="flex gap-6">
               <input
-                className="w-[225px] h-[38px] pl-[20px]"
+                className="w-[225px] h-[38px] pl-[20px] rounded "
                 placeholder="Your Name"
                 type="text"
               />
               <input
-                className="w-[225px] h-[38px] pl-[20px] "
+                className="w-[225px] h-[38px] pl-[20px] rounded "
                 placeholder="Your Email"
                 type="text"
               />
             </div>
             <input
-              className="w-[474px] pl-[20px] h-[38px] "
+              className="w-[474px] pl-[20px] h-[38px]  rounded"
               placeholder="Subject"
               type="text"
             />
-            <input
-              className="w-[474px] h-[134px] align-top pl-[20px] pt-[14px] text-start "
+            <textarea
+              className=" pl-[20px] pt-[14px] w-[474px] h-[134px] rounded  "
               placeholder="Write a message"
               type="text"
             />
+            <div>
+              <button className="pl-4 pr-4 pt-[10px] pb-[10px] border text-[#F6F6F6] rounded-md bg-[#4B6BFB] ">
+                Send Message
+              </button>
+            </div>
           </div>
         </div>
       </div>

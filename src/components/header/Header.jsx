@@ -38,8 +38,8 @@ export const Header = () => {
         <Link href="/blog-list">Blog</Link>
         <Link href="/contact-us">Contact</Link>
       </div>
-      <div className="border rounded-md flex  items-center bg-gray-200 p-2 gap-3">
-        <div className="flex flex-col relative  w-28 ">
+      <div className="border rounded-md flex relative items-center bg-gray-200 p-2 gap-3">
+        <div className="flex flex-col   w-28 ">
           <input
             onChange={handleInputChange}
             className=" w-28 bg-gray-200 outline-none "
@@ -50,14 +50,17 @@ export const Header = () => {
           <div
             className={` ${
               searchValue ? "h-[200px]" : "h-0"
-            } flex  bg-gray-200  w-[200px] overflow-hidden transition-all duration-200  flex-col absolute top-10 left-0 rounded  `}
+            } flex  bg-gray-200  overflow-hidden  transition-all duration-200  flex-col absolute top-12 left-0 rounded  `}
           >
             {searchValue &&
               filteredArticles.map((article) => {
                 filteredArticles.length = 5;
                 return (
                   <Link href={`/blog-list/${article.id}`}>
-                    <div className="line-clamp-1 p-1 box-border ">
+                    <div
+                      key={article?.id}
+                      className="line-clamp-1 p-1 border-b box-border "
+                    >
                       {article?.title}
                     </div>
                   </Link>

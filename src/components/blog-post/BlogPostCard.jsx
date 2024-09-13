@@ -1,7 +1,7 @@
 import { format } from "date-fns";
 export const BlogPostCard = ({ article, created_at }) => {
   return (
-    <div className="w-[392px] h-[475px] border-[#E8E8EA] rounded-xl border p-4 flex flex-col justify-between">
+    <div className="w-[392px] h-[475px]  border-[#E8E8EA] rounded-xl border p-4 flex flex-col justify-between">
       <div className="flex flex-col gap-4">
         <div
           style={{

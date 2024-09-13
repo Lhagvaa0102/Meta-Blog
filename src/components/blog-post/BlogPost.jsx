@@ -34,7 +34,7 @@ export const BlogPost = () => {
             <Link href={`blog-list/${article.id}`}>
               <BlogPostCard
                 article={article}
-                key={article.id}
+                key={article?.id}
                 created_at={article.created_at}
               />
             </Link>
