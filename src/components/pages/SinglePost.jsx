@@ -16,7 +16,7 @@ const SinglePostPage = ({}) => {
   };
   useEffect(() => {
     fetchData();
-  }, [id, article]);
+  }, [id]);
 
   return (
     <div className="flex flex-col items-center">

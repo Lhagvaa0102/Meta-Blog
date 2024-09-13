@@ -9,12 +9,14 @@ export const Header = () => {
   const filteredArticles = articlesForSearch?.filter((article) =>
     article?.title?.toLowerCase().includes(searchValue)
   );
+  const [isOpen, setIsOpen] = useState(false);
   // if (typeof window !== "undefined") {
   //   document.addEventListener("mousedown", () => {
-  //     searchValue("");
+  //     setIsOpen(false);
   //   });
   // }
   const handleInputChange = (event) => {
+    setIsOpen(true);
     setSearchValue(event.target.value);
   };
   const fetchSearchData = () => {
@@ -49,7 +51,7 @@ export const Header = () => {
           />
           <div
             className={` ${
-              searchValue ? "h-[200px]" : "h-0"
+              isOpen ? "h-[170px]" : "h-0"
             } flex  bg-gray-200  overflow-hidden  transition-all duration-200  flex-col absolute top-12 left-0 rounded  `}
           >
             {searchValue &&
